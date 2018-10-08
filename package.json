@@ -1,0 +1,28 @@
+{
+  "name": "hypermd-katex",
+  "description": "In HyperMD, Use KaTeX to render TeX formulars",
+  "keywords": [
+    "hypermd",
+    "powerpack",
+    "katex"
+  ],
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "laobubu",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && hmd-transpile -o . index.js"
+  },
+  "devDependencies": {
+    "@hypermd/build-tools": "https://github.com/HyperMD/build-tools.git",
+    "codemirror": "^5.40.2",
+    "hypermd": "^0.4.0",
+    "typescript": "^3.1.1"
+  },
+  "peerDependencies": {
+    "hypermd": "^0.4.0"
+  },
+  "dependencies": {
+    "katex": "^0.10.0-rc.1"
+  }
+}

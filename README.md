@@ -2,9 +2,13 @@
 
 In HyperMD, Use [KaTeX][] to render TeX formulars.
 
-[Demo](https://hypermd.github.io/hypermd-katex/docs/pbe-index.html) | [GitHub](https://github.com/HyperMD/hypermd-katex)
+[Demo](https://hypermd.github.io/hypermd-katex/example/pbe-index.html) | [GitHub](https://github.com/HyperMD/hypermd-katex) | [![NPM version](https://img.shields.io/npm/v/hypermd-katex.svg?style=flat-square)](https://npmjs.org/package/hypermd-katex)
 
 ## How to use
+
+1. install `katex` and `hypermd-katex`
+2. `import` before creating HyperMD editor
+3. create HyperMD editor
 
 ### For webpack / parcel
 
@@ -14,7 +18,8 @@ First of all, install the packages: `npm install --save hypermd-katex katex`
 import * as HyperMD from "hypermd"
 import "hypermd-katex"
 
-HyperMD.fromTextArea(your_textarea)
+const your_textarea = document.getElementById('input-box')
+const editor = HyperMD.fromTextArea(your_textarea)
 ```
 
 ### For requirejs (example)
@@ -31,21 +36,22 @@ In your HTML:
 <script data-main src="main.js"></script>
 ```
 
-As for your `main.js`, [here is an example](./docs/requirejs-main.js). Note that `./node_modules` can be changed to your CDN services.
+As for your `main.js`, [here is an example](./example/requirejs-main.js). Note that `./node_modules` can be changed to your CDN services.
 
 ### For Plain Browser Env
 
 *Why hurting yourself? The bundlers and module loaders are the future!*
 
-See [example file](./docs/pbe-index.html)
+See the source of [example file](./example/pbe-index.html)
 
 
 ## Develop
 
 0. (if needed) update `pbe.manifest.json` and define modules' global var name
-1. `cd docs && yarn`
-2. Back to project directory, `npm run dev`
-3. Meanwhile, open a `http-server` and visit http://127.0.0.1:8080/docs/requirejs-index.html
+1. Go to **example** dir, run `npm i` and modify **requirejs-main.js**
+   - Uncomment this line: `paths: { "hypermd-katex": "../..", },`
+2. Back to **project dir**, `npm run dev`
+3. Meanwhile, open a `http-server` and visit http://127.0.0.1:8080/example/requirejs-index.html
    - *Psst* Use [http-server](https://www.npmjs.com/package/http-server) and do this in one command `hs -c-1`
 4. Start test
 

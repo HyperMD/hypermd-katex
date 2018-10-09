@@ -4,7 +4,8 @@ tmp/
 cache/
 .vscode/
 
-*.ts
+tsconfig.json
+src/
 docs/
 
 npm-debug.log*

@@ -9,20 +9,24 @@
   "version": "0.1.0",
   "main": "index.js",
   "author": "laobubu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HyperMD/hypermd-katex.git"
+  },
   "license": "MIT",
   "scripts": {
+    "dev": "tsc -w --module amd",
     "build": "tsc && hmd-transpile -o . index.js"
   },
   "devDependencies": {
     "@hypermd/build-tools": "https://github.com/HyperMD/build-tools.git",
     "codemirror": "^5.40.2",
     "hypermd": "^0.4.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "katex": "^0.10.0-rc.1"
   },
   "peerDependencies": {
-    "hypermd": "^0.4.0"
-  },
-  "dependencies": {
+    "hypermd": "^0.4.0",
     "katex": "^0.10.0-rc.1"
   }
 }

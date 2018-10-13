@@ -1,9 +1,6 @@
 requirejs.config({
-  baseUrl: "./node_modules/",
-  // baseUrl: "https://cdn.jsdelivr.net/npm/",   // or use CDN
-
-  // for `hypermd-katex` development only:
-  // paths: { "hypermd-katex": "../..", },
+  baseUrl: "https://cdn.jsdelivr.net/npm/",   // use CDN
+  // baseUrl: "./node_modules/", // or use local version?
 
   packages: [
     { name: 'hypermd', main: 'everything.js' },
@@ -16,6 +13,12 @@ requirejs.config({
     { name: 'katex', main: 'dist/katex.min.js' },
   ]
 })
+
+//////////////////////////////////////////////////////////////////
+// This part is for development. It's meaningless to you. Please delete it:
+// 这一小段代码仅用于开发测试，对你没用。要拷贝代码时，记得删除：
+if (location.search.indexOf('_hmd_dev_') !== -1) requirejs.config({ paths: { "hypermd-katex": "/." } })
+//////////////////////////////////////////////////////////////////
 
 require([
   "hypermd",
